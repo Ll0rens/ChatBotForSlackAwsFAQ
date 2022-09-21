@@ -15,7 +15,7 @@ class EC2_faq(scrapy.Spider):
                     answer = answer + response_aux[i].css('p').get() + '\n'
                     if (response_aux[i + 1].css('p').css('b::text').get()) != None:
                         yield {
-                            'question': question,
-                            'answer': BeautifulSoup(answer, "lxml").text
+                            'Question': question,
+                            'Answer': BeautifulSoup(answer, "lxml").text
                             }
                         break
